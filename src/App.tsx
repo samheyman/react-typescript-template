@@ -1,9 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
 // Material UI imports
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+
+// Pages
+import home from './pages/home';
+import signIn from './pages/signIn';
+import signUp from './pages/signUp';
+
 // Custom components
 import Navbar from './components/Navbar';
 
@@ -14,6 +20,10 @@ const theme = createMuiTheme({
       fontSize: '1.9rem',
       fontWeight: 400,
     },
+    h2: {
+      fontSize: '1.5rem',
+      fontWeight: 400,
+    },
   },
   palette: {
     background: {
@@ -21,15 +31,15 @@ const theme = createMuiTheme({
     },
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: '#1c90f3',
+      main: '#6200EE',
       // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
+      contrastText: '#fff'
     },
     secondary: {
-      light: '#0066ff',
-      main: '#ff3860',
+      // light: '#0066ff',
+      main: '#03DAC6',
       // dark: will be calculated from palette.secondary.main,
-      contrastText: '#ffcc00',
+      contrastText: '#fff',
     },
   },
 });
@@ -37,11 +47,15 @@ const theme = createMuiTheme({
 const App: React.FC = () => {
   return (
     <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <Navbar />
-      <Container maxWidth="lg">
-        <Typography variant="h1">Homepage</Typography>
-      </Container>
+      <Router>
+        <CssBaseline />
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={home} />
+          <Route exact path="/signin" component={signIn} />
+          <Route exact path="/signup" component={signUp} />
+        </Switch>
+      </Router>
     </MuiThemeProvider>
   );
 }

@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// Mui imports
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -76,9 +80,13 @@ export default function MenuAppBar() {
           <Typography variant="h1" className={classes.title}>
             WebStarter
           </Typography>
-          <ul>
-            <li>Search</li>
-          </ul>
+          <Button color="inherit" component={Link} to={"/home"}>Home</Button>
+          {!auth && (
+            <React.Fragment>
+              <Button color="inherit" component={Link} to={"/signin"}>Sign in</Button>
+              <Button color="inherit" component={Link} to={"/signup"}>Sign up</Button>
+            </React.Fragment>
+          )}
           {auth && (
             <div>
               <IconButton

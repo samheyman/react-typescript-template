@@ -42,3 +42,27 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Setup
+
+### Favicon
+```<link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> ```
+
+### Theme
+```<meta name="theme-color" content="#000000" />```
+
+### Title
+```<title>New title</title>```
+
+### CSS
+Add `App.css` and place font backup 
+
+### Pages
+Create pages in `pages` folder
+
+### Colors
+[https://material.io/design/color/#color-theme-creation](MUI color tool)
+
+### Add proxy for base url
+Add to package.json
