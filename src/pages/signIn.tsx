@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         formContainer: {
             margin: '0 auto',
-            maxWidth: '400px',
+            maxWidth: '600px',
+            padding: '0 100px',
             textAlign: 'center'
         },
         logo: {

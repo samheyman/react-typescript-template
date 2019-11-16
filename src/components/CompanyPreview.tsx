@@ -20,24 +20,23 @@ const useStyles = makeStyles((theme: Theme) =>
         content: {
             padding: 25,
         },
-        h5: {
+        companyName: {
             color: theme.palette.primary.main
         }
     })
 );
 
-function ProductPreview({product}:any) {
+function CompanyPreview({company}:any) {
     const classes = useStyles();
 
     return (
         <Card className={classes.card}>
             <CardContent>
-                <Typography variant="h5" className={classes.h5}>{product.title}</Typography>
-                
-                <Typography variant="body2">Date added: {product.createdAt}</Typography>
+                <Typography variant="h6" className={classes.companyName}>{company.name}</Typography>
+                <Typography variant="caption">Joined on: {company.createdAt}</Typography>
             </CardContent>
         </Card>
     )
 }
 
-export default ProductPreview
+export default CompanyPreview

@@ -21,9 +21,8 @@ import companyEmployee from '../data/companyEmployee';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        h2: {
-            marginTop: 0,
-            marginBottom: 0
+        header: {
+            margin: 0,
         },
         h3: {
             marginTop: 0
@@ -69,7 +68,7 @@ export default function Home() {
 
     const [projects, setProjects] = useState(projectsList);
     const [companies, setCompanies] = useState(companiesList);
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(companyEmployee);
 
     const showProjects = projects && projects.length > 0 ? (
         <div className={classes.projects}>
@@ -114,13 +113,13 @@ export default function Home() {
             <Grid container spacing={2}>
                 <Grid item sm={12} md={8}>
                     {/* Results section */}
-                    <Typography className={classes.h2} variant="h2">Projects</Typography>
+                    <Typography className={classes.header} component="h1" variant="h2">Projects</Typography>
                     {showProjects}
 
                     {newProjectForm}
                     <hr className={classes.separator} />
 
-                    <Typography className={classes.h2} variant="h2">Companies</Typography>
+                    <Typography className={classes.header} component="h1" variant="h2">Companies</Typography>
                     {showCompanies}
                 </Grid>
                 <Grid item sm={12} md={4}>
