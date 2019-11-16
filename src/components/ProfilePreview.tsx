@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme: Theme) =>
         img: {
             height: '100px',
             borderRadius: '50%'
+        },
+        email: {
+            margin: '20px 0'
         }
     })
 );
@@ -56,9 +59,9 @@ function ProfilePreview({user}:any) {
         <Paper className={classes.paper}>
             <img className={classes.img} src={user.photoUrl} alt="user avatar" />
             <Typography variant="h5">{user.displayName ? user.displayName : 'GUEST'}</Typography>
-            <Typography variant="h6">{user? user.type : null}</Typography>
-            <Typography variant="body1">{user? user.email : null}</Typography>
-            <Typography variant="body2">{user? `Joined: ` + user.createdAt : null}</Typography>
+            <Typography variant="subtitle2">{user? user.type : null}</Typography>
+            <Typography variant="body1" className={classes.email}>{user? user.email : null}</Typography>
+            <Typography variant="caption">{user? `Joined: ` + user.createdAt : null}</Typography>
         </Paper>
     ) : (
         <Paper className={classes.paper}>

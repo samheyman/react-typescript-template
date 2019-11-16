@@ -16,8 +16,9 @@ import ProfilePreview from '../components/ProfilePreview';
 // Data
 import projectsList from '../data/projects';
 import companiesList from '../data/companies';
-import usersList from '../data/users';
 import companyEmployee from '../data/companyEmployee';
+import candidate from '../data/candidate';
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -68,7 +69,9 @@ export default function Home() {
 
     const [projects, setProjects] = useState(projectsList);
     const [companies, setCompanies] = useState(companiesList);
-    const [user, setUser] = useState(companyEmployee);
+    // set user type here
+    // const [user, setUser] = useState(companyEmployee);
+    const [user, setUser] = useState(candidate);
 
     const showProjects = projects && projects.length > 0 ? (
         <div className={classes.projects}>

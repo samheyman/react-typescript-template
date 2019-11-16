@@ -78,7 +78,7 @@ export default function MenuAppBar() {
         <Toolbar>
           <StarHalfIcon className={classes.icon}/>
           <Typography variant="h1" className={classes.title}>
-            WebStarter
+            We Know How
           </Typography>
           <Button color="inherit" component={Link} to={"/home"}>Home</Button>
           {!auth && (
